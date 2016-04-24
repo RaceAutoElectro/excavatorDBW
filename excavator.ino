@@ -4,7 +4,7 @@
 #define step_pin 6 // Steps pin on drv8825
 #define dir_pin 5  // Direction pin on drv8825
 #define SLEEP 7    // SLEEP pin on drv8825
-#define MIN_POS 0// Ref point
+#define MIN_POS 80// Ref point
 #define MAX_POS 1023
 int buttonState = 0;
 #define pushButton1 A1
@@ -64,13 +64,13 @@ void loop() {
   }
   // set the target according to buttons
   if (!digitalRead(pushButton1)) {
-    targetPos = 1000;
+    targetPos = 100;
   }
   if (!digitalRead(pushButton2)) {
-    targetPos = 2000;
+    targetPos = 200;
   }
   if (!digitalRead(pushButton3)) {
-    targetPos = 3000;
+    targetPos = 300;
   }
   Serial.print("currentPos:");
   Serial.println(targetPos);
